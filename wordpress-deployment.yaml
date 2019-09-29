@@ -5,6 +5,14 @@ metadata:
   name: wordpress
   labels:
     app: wordpress
+  annotations:
+    getambassador.io/config: |
+      ---
+      apiVersion: ambassador/v1
+      kind: Mapping
+      name: wp-mapping
+      prefix: /
+      service: wordpress:5000
 spec:
   ports:
     - port: 5000   
@@ -50,6 +58,8 @@ spec:
       - image: wordpress:php7.2-apache
         name: wordpress
         env:
+        - name: WORDPRESS_DEBUG
+          value: '1'
         - name: WORDPRESS_DB_HOST
           value: wordpress-mysql
         - name: WORDPRESS_DB_PASSWORD
@@ -67,11 +77,3 @@ spec:
       - name: wordpress-persistent-storage
         persistentVolumeClaim:
           claimName: wp-pv-claim
----
-apiVersion: getambassador.io/v1
-kind: Mapping
-metadata:
-  name: wordpress
-spec:
-  prefix: /
-  service: wordpress:5000
