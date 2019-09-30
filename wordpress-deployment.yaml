@@ -5,6 +5,14 @@ metadata:
   name: wordpress
   labels:
     app: wordpress
+  annotations:
+    getambassador.io/config: |
+      ---
+      apiVersion: ambassador/v1
+      kind: Mapping
+      name: wp-mapping
+      prefix: /
+      service: wordpress:80
 spec:
   ports:
     - port: 80   
