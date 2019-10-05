@@ -64,7 +64,7 @@ spec:
           - cluster.local
           - vserver-on.de
       containers:
-      - image: wordpress:php7.3-apache
+      - image: wordpress:5.0.0-php5.6-apache
         name: wordpress
         env:
         - name: WORDPRESS_DEBUG

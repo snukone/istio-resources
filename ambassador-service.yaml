@@ -5,6 +5,7 @@ metadata:
   name: ambassador
   annotations:
     getambassador.io/config: |
+      getambassador.io/config: |
       ---
       apiVersion: ambassador/v1
       kind: Module
@@ -13,7 +14,13 @@ metadata:
         server:
           enabled: True
           redirect_cleartext_from: 8080
-          secret: ambassador-certs 
+      ---
+      apiVersion: ambassador/v1
+      kind: TLSContext
+      name: ambassador-tlscontext
+      hosts:
+      - lesetraum.blog
+      secret: ambassador-certs 
 spec:
   type: LoadBalancer
   externalTrafficPolicy: Local

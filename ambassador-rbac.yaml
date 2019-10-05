@@ -267,6 +267,15 @@ spec:
                   service: ambassador
               topologyKey: kubernetes.io/hostname
       serviceAccountName: ambassador
+      dnsPolicy: "None"
+      dnsConfig:
+        nameservers:
+          - 10.96.0.10
+        searches:
+          - default.svc.cluster.local
+          - svc.cluster.local
+          - cluster.local
+          - vserver-on.de
       containers:
       - name: ambassador
         image: quay.io/datawire/ambassador:0.80.0

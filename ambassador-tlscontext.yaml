@@ -1,8 +1,0 @@
----
-apiVersion: getambassador.io/v1
-kind: TLSContext
-metadata:
-  name: tls
-spec:
-  hosts: ["*"]
-  secret: ambassador-certs 
