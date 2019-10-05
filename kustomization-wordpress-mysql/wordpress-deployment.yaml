@@ -54,8 +54,17 @@ spec:
         app: wordpress
         tier: frontend
     spec:
+      dnsPolicy: "None"
+      dnsConfig:
+        nameservers:
+          - 10.96.0.10
+        searches:
+          - default.svc.cluster.local
+          - svc.cluster.local
+          - cluster.local
+          - vserver-on.de
       containers:
-      - image: wordpress:php7.2-apache
+      - image: wordpress:php7.3-apache
         name: wordpress
         env:
         - name: WORDPRESS_DEBUG
