@@ -1,0 +1,4 @@
+---
+resources:
+  - cert-manager-no-webhook.yaml
+  - cert-manager-clusterissuer.yaml

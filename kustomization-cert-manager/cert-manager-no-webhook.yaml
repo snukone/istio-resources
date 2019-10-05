@@ -8053,6 +8053,15 @@ spec:
       annotations:
     spec:
       serviceAccountName: cert-manager-cainjector
+      dnsPolicy: "None"
+      dnsConfig:
+        nameservers:
+          - 10.96.0.10
+        searches:
+          - default.svc.cluster.local
+          - svc.cluster.local
+          - cluster.local
+          - vserver-on.de
       containers:
         - name: cainjector
           image: "quay.io/jetstack/cert-manager-cainjector:v0.10.1"
@@ -8104,6 +8113,15 @@ spec:
         prometheus.io/port: '9402'
     spec:
       serviceAccountName: cert-manager
+      dnsPolicy: "None"
+      dnsConfig:
+        nameservers:
+          - 10.96.0.10 
+        searches:
+          - default.svc.cluster.local
+          - svc.cluster.local
+          - cluster.local 
+          - vserver-on.de
       containers:
         - name: cert-manager
           image: "quay.io/jetstack/cert-manager-controller:v0.10.1"
