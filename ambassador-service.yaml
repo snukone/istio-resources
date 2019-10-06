@@ -5,7 +5,6 @@ metadata:
   name: ambassador
   annotations:
     getambassador.io/config: |
-      getambassador.io/config: |
       ---
       apiVersion: ambassador/v1
       kind: Module
