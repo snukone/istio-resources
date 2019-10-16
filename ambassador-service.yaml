@@ -16,16 +16,22 @@ metadata:
       ---
       apiVersion: ambassador/v1
       kind: TLSContext
-      name: ambassador-tlscontext
+      name: lesetraum-site-tlscontext
       hosts:
       - lesetraum.blog
-      secret: ambassador-certs 
+      secret: lesetraum-site-certs 
+      ---
+      apiVersion: ambassador/v1
+      kind: TLSContext
+      name: lesetraum-mail-tlscontext
+      hosts:
+      - mail.lesetraum.blog
+      secret: lesetraum-mail-secret
 spec:
   type: LoadBalancer
   externalTrafficPolicy: Local
   externalIPs:
-   - 84.38.64.209 
-  #loadBalancerIP: 84.38.64.209 
+   - 84.38.64.209
   ports:
    - name: http
      port: 80

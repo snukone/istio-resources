@@ -10,3 +10,4 @@ resources:
   - wordpress-local-storageclass.yaml
   - wordpress-local-volume.yaml
   - wordpress-deployment.yaml
+  - wordpress-service.yaml
