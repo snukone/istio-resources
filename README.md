@@ -1,1 +1,2 @@
 # istio-resources
+:rocket: :cupid:
