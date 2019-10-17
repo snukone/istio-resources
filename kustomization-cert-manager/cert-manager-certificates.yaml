@@ -22,7 +22,7 @@ apiVersion: certmanager.k8s.io/v1alpha1
 kind: Certificate
 metadata:
   name: lesetraum-mail-certs
-  namespace: mailu-mailserver
+  namespace: default
 spec:
   secretName: lesetraum-mail-certs
   issuerRef:
