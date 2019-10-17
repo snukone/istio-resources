@@ -12,7 +12,3 @@ resources:
   - fetchmail.yaml
   - admin.yaml
   - webdav.yaml
-  - admin-ingress.yaml
-  - webdav-ingress.yaml
-  - security-ingress.yaml
-  - webmail-ingress.yaml
