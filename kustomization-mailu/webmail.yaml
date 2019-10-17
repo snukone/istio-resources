@@ -1,4 +1,4 @@
-
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -9,7 +9,7 @@ spec:
     matchLabels:
       app: mailu-roundcube
       role: mail
-      tier: backend
+      tier: frontend
   replicas: 1
   template:
     metadata:
