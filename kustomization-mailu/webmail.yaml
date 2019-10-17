@@ -5,6 +5,11 @@ metadata:
   name: mailu-roundcube
   namespace: mailu-mailserver
 spec:
+  selector:
+    matchLabels:
+      app: mailu-roundcube
+      role: mail
+      tier: backend
   replicas: 1
   template:
     metadata:
