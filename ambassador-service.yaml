@@ -19,7 +19,7 @@ metadata:
       name: lesetraum-site-tlscontext
       hosts:
       - lesetraum.blog
-      secret: lesetraum-site-certs 
+      secret: lesetraum-site-certs
       ---
       apiVersion: ambassador/v1
       kind: TLSContext
