@@ -33,7 +33,7 @@ metadata:
       name: lesetraum-mail-tlscontext
       hosts:
       - mail.lesetraum.blog
-      secret: lesetraum-mail-secret
+      secret: lesetraum-mail-certs
 spec:
   type: LoadBalancer
   externalTrafficPolicy: Local
