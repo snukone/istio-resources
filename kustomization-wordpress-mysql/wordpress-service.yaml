@@ -22,7 +22,7 @@ metadata:
       kind: Mapping
       name: wp-www-mapping
       prefix: /
-      service: https://lesetraum.blog
+      service: lesetraum.blog
       host: www.lesetraum.blog
       timeout_ms: 10000
       idle_timeout_ms: 500000
