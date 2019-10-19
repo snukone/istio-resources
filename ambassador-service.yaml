@@ -23,6 +23,13 @@ metadata:
       ---
       apiVersion: ambassador/v1
       kind: TLSContext
+      name: lesetraum-www-tlscontext
+      hosts:
+      - www.lesetraum.blog
+      secret: lesetraum-www-certs
+      ---
+      apiVersion: ambassador/v1
+      kind: TLSContext
       name: lesetraum-mail-tlscontext
       hosts:
       - mail.lesetraum.blog
