@@ -1,6 +1,7 @@
 ---
 resources:
   - storageclass.yaml
+  - pv.yaml
   - rbac.yaml
   - configmap.yaml
   - pvc.yaml
