@@ -21,6 +21,15 @@ spec:
         component: ingress-controller
         type: nginx
     spec:
+      dnsPolicy: "None"
+      dnsConfig:
+        nameservers:
+          - 10.96.0.10
+        searches:
+          - default.svc.cluster.local
+          - svc.cluster.local
+          - cluster.local
+          - vserver-on.de
       affinity:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
@@ -30,7 +39,6 @@ spec:
                 operator: Exists
       nodeSelector:
         node-role.kubernetes.io/node: ""
-      dnsPolicy: ClusterFirstWithHostNet
       restartPolicy: Always
       terminationGracePeriodSeconds: 60
       containers:
@@ -118,7 +126,7 @@ metadata:
       kind: Mapping
       name: mailu-mapping
       prefix: /
-      service: front:80
+      service: mailu-front:80
       host: mail.lesetraum.blog
       timeout_ms: 7000
       idle_timeout_ms: 500000

@@ -18,6 +18,15 @@ spec:
         role: mail
         tier: backend
     spec:
+      dnsPolicy: "None"
+      dnsConfig:
+        nameservers:
+          - 10.96.0.10
+        searches:
+          - default.svc.cluster.local
+          - svc.cluster.local
+          - cluster.local
+          - vserver-on.de
       containers:
       - name: smtp
         image: mailu/postfix:master
