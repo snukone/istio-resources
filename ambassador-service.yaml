@@ -34,6 +34,13 @@ metadata:
       hosts:
       - mail.lesetraum.blog
       secret: lesetraum-mail-certs
+      ---
+      apiVersion: ambassador/v1
+      kind: TLSContext
+      name: redwire-oidc-tlscontext
+      hosts:
+      - oidc.redwire.consulting
+      secret: redwire-oidc-certs
 spec:
   type: LoadBalancer
   externalTrafficPolicy: Local

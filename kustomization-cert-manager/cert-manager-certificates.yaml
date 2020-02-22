@@ -74,3 +74,22 @@ spec:
         ingressClass: nginx
       domains:
       - mail.lesetraum.blog
+---
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: redwire-oidc-certs
+  namespace: default
+spec:
+  secretName: redwire-oidc-certs
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  dnsNames:
+  - oidc.redwire.consulting
+  acme:
+    config:
+    - http01:
+        ingressClass: nginx
+      domains:
+      - oidc.redwire.consulting
