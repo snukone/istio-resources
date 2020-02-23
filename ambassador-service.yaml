@@ -41,6 +41,13 @@ metadata:
       hosts:
       - oidc.redwire.consulting
       secret: redwire-oidc-certs
+      ---
+      apiVersion: ambassador/v1
+      kind: TLSContext
+      name: redwire-grafana-tlscontext
+      hosts:
+      - grafana.redwire.consulting
+      secret: redwire-grafana-certs
 spec:
   type: LoadBalancer
   externalTrafficPolicy: Local
