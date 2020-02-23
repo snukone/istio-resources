@@ -112,3 +112,22 @@ spec:
         ingressClass: nginx
       domains:
       - grafana.redwire.consulting
+---
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: redwire-grafana-certs
+  namespace: istio-system
+spec:
+  secretName: redwire-grafana-certs
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  dnsNames:
+  - grafana.redwire.consulting
+  acme:
+    config:
+    - http01:
+        ingressClass: nginx
+      domains:
+      - grafana.redwire.consulting
