@@ -5,7 +5,7 @@ metadata:
   name: grafana-ambassador-mapping
 spec:
   prefix: /
-  service: istio-system.grafana:3000
+  service: grafana.istio-system:3000
   host: grafana.redwire.consulting
   timeout_ms: 10000
   idle_timeout_ms: 500000
