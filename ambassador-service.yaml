@@ -44,10 +44,10 @@ metadata:
       ---
       apiVersion: ambassador/v1
       kind: TLSContext
-      name: redwire-grafana-tlscontext
+      name: redwire-telemetry-tlscontext
       hosts:
-      - grafana.redwire.consulting
-      secret: redwire-grafana-certs
+      - telemetry.redwire.consulting
+      secret: redwire-telemetry-certs
 spec:
   type: LoadBalancer
   externalTrafficPolicy: Local

@@ -2,11 +2,11 @@
 apiVersion: getambassador.io/v1
 kind: Mapping
 metadata:
-  name: grafana-ambassador-mapping
+  name: telemetry-ambassador-mapping
 spec:
   prefix: /
-  service: grafana.istio-system:3000
-  host: grafana.redwire.consulting
+  service: telemetry.istio-system:3000
+  host: telemetry.redwire.consulting
   timeout_ms: 10000
   idle_timeout_ms: 500000
   connect_timeout_ms: 4000
