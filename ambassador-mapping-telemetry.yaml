@@ -5,7 +5,7 @@ metadata:
   name: telemetry-ambassador-mapping
 spec:
   prefix: /
-  service: telemetry.istio-system:3000
+  service: grafana.istio-system:3000
   host: telemetry.redwire.consulting
   timeout_ms: 10000
   idle_timeout_ms: 500000
